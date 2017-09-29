@@ -7,6 +7,7 @@ defmodule ConfigValidator.Mixfile do
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
+      package: package(),
       deps: deps(),
       docs: [
         main: ConfigValidator
@@ -18,6 +19,17 @@ defmodule ConfigValidator.Mixfile do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE"],
+      maintainers: ["Daniel Berkompas"],
+      licenses: ["MIT"],
+      links: %{
+        "Github" => "https://github.com/infinitered/config_validator"
+      }
     ]
   end
 
