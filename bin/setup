@@ -26,4 +26,8 @@ echo "Running tests to verify setup is complete..."
 echo "----------------------------------------------------------"
 bin/ci || { exit 1; }
 
+echo "----------------------------------------------------------"
+echo "Reporting docs status to InchCI"
+echo "----------------------------------------------------------"
+mix inch.report
 

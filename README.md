@@ -1,4 +1,7 @@
 # ConfigValidator
+[![Build Status](https://semaphoreci.com/api/v1/ir/config_validator/branches/master/shields_badge.svg)](https://semaphoreci.com/ir/config_validator)
+[![Hex Version](https://img.shields.io/hexpm/v/config_validator.svg)](https://hex.pm/packages/config_validator)
+[![Inline docs](http://inch-ci.org/github/infinitered/config_validator.svg)](http://inch-ci.org/github/infinitered/config_validator)
 
 Configuration validation for Mix config files. 
 
