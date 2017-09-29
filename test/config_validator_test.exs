@@ -21,6 +21,7 @@ defmodule ConfigValidatorTest do
       assert Keyword.has_key?(app[:nested], :tuple_env)
       assert Keyword.has_key?(app[ConfigValidator], :direct_env)
       assert Keyword.has_key?(app[ConfigValidator], :tuple_env)
+      assert [[key: nil]] = apps[:config_validator][:nested_with_maps]
     end
   end
 

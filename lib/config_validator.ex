@@ -165,6 +165,15 @@ defmodule ConfigValidator do
     configs = if config_is_nil?(h), do: [h | configs], else: configs
     nil_configs(t, configs)
   end
+  defp nil_configs([h | t], configs) when is_map(h) do
+    nested = nil_configs(Enum.to_list(h), [])
+
+    if length(nested) > 0 do
+      nil_configs(t, [nested | configs])
+    else
+      nil_configs(t, configs)
+    end
+  end
 
   defp config_is_nil?({_key, {:system, var}}) do
     is_nil(System.get_env(var))
