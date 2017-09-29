@@ -165,6 +165,10 @@ defmodule ConfigValidator do
     configs = if config_is_nil?(h), do: [h | configs], else: configs
     nil_configs(t, configs)
   end
+  # Ignore structs
+  defp nil_configs([%{__struct__: _} | t], configs) do
+    nil_configs(t, configs)
+  end
   defp nil_configs([h | t], configs) when is_map(h) do
     nested = nil_configs(Enum.to_list(h), [])
 
