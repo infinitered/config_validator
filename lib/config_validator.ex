@@ -174,6 +174,9 @@ defmodule ConfigValidator do
       nil_configs(t, configs)
     end
   end
+  defp nil_configs([_ | t], configs) do
+    nil_configs(t, configs)
+  end
 
   defp config_is_nil?({_key, {:system, var}}) do
     is_nil(System.get_env(var))
