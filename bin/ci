@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Continuous Integration Script
+#
+# This script contains all the test commands for this app, and it's run on
+# semaphore with the `bin/semaphore` script. Run this script to run all the same
+# commands that CI uses to determine if the build passes.
+
+MIX_ENV=test mix compile --warnings-as-errors --force || { echo 'Please fix all compiler warnings.'; exit 1; }
+MIX_ENV=test mix docs  || { echo 'Elixir HTML docs were not generated!'; exit 1; }
+mix test || { echo 'Elixir tests failed!'; exit 1; }
