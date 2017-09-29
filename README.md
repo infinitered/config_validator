@@ -37,7 +37,7 @@ Add `config_validator` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:config_validator, "~> 0.1.1"}
+    {:config_validator, "~> 0.1.2"}
   ]
 end
 ```
